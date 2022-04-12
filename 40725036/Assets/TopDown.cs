@@ -10,8 +10,8 @@ namespace Tnu40725036
         #region 資料:保存系統需要的基本資料，例如:移動速度、動畫參數名稱與元件
         //欄位 field 語法:修飾詞 資料類型 欄位名稱 (指定 初始值);
         private float speed = 3.0f;
-        private string parameterRun = "Walk";
-        private string parameterDead = "Dead";
+        private string parameterRun = "開關跑步";
+        private string parameterDead = "開關死亡";
         private Animator ani;
         private Rigidbody2D rig;
         private float h;
@@ -51,13 +51,13 @@ namespace Tnu40725036
             h = Input.GetAxis("Horizontal");
             v = Input.GetAxis("Vertical");
             //print("取得水平軸向值：" + h);
-
+            
         }
         private void Move()
         {
             // 使用非靜態屬性 non-static
             //欄位名稱.靜態屬性名稱 指定 值
-            rig.velocity = new Vector2(h, v) * speed;
+            rig.velocity = new Vector2 (h , v) * speed;
 
             ani.SetBool(parameterRun, h != 0 || v != 0);
 
