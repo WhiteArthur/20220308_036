@@ -6,7 +6,7 @@ namespace Tnu40725036
 {
 
 
-    public class WeaponSystem : MonoBehaviour
+    public class WeaponSystem2 : MonoBehaviour
     {
         [SerializeField, Header("武器資料")]
         private DataWeapon dataWeapon;
@@ -22,13 +22,13 @@ namespace Tnu40725036
         {
             Gizmos.color = new Color(1, 0, 0, 0.5f);
 
-            
-            
-            for (int  i = 0; i < dataWeapon.v3SpawnPoint.Length; i++)
+
+
+            for (int i = 0; i < dataWeapon.v3SpawnPoint.Length; i++)
             {
                 Gizmos.DrawSphere(transform.position + dataWeapon.v3SpawnPoint[i], 0.1f);
             }
-            
+
         }
         private void Update()
         {
@@ -52,32 +52,17 @@ namespace Tnu40725036
         /// </summary>
         private void SpawnWeapon()
         {
-            timer += Time.deltaTime;
-            //print("經過的時間 : " + timer);
+            timer += Time.deltaTime;      
             if (timer >= dataWeapon.interval)
             {
 
-                int random =  Random.Range(0, dataWeapon.v3SpawnPoint.Length);
+                int random = Random.Range(0, dataWeapon.v3SpawnPoint.Length);
                 Vector3 pos = transform.position + dataWeapon.v3SpawnPoint[random];
-                //Quaternion 四位元 : 紀錄角度資訊
-                //Quaternion.identity 零度角(0 , 0 , 0)
-                //暫存武器 = 生成 (物件，座標，角度)
-                GameObject temp = Instantiate(dataWeapon.goWeapon, pos, Quaternion.identity);
-                //暫存武器.取得元件<剛體>().添加堆力 (方向 * 速度)
+                GameObject temp = Instantiate(dataWeapon.goWeapon, pos, Quaternion.Euler(0, 0, 135));
                 temp.GetComponent<Rigidbody2D>().AddForce(dataWeapon.v3Direction * dataWeapon.speed);
                 timer = 0;
             }
-            /*
-            if (timer >= dataWeapon2.interval)
-            {
-
-                int random = Random.Range(0, dataWeapon2.v3SpawnPoint.Length);
-                Vector3 pos = transform.position + dataWeapon2.v3SpawnPoint[random];
-                GameObject temp = Instantiate(dataWeapon.goWeapon, pos, Quaternion.Euler(0, 0, 135));
-                temp.GetComponent<Rigidbody2D>().AddForce(dataWeapon2.v3Direction * dataWeapon2.speed);
-                timer = 0;
-            }
-            */
+            
         }
     }
 }

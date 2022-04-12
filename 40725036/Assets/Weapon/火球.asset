@@ -12,9 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6245c54bbe76e704889351556ab6fa1d, type: 3}
   m_Name: "\u706B\u7403"
   m_EditorClassIdentifier: 
-  speed: 500
-  attack: 10
-  countStart: 1
-  countMax: 2
-  interval: 4
-  v3SpawnPoint: []
+  speed: 350
+  attack: 7
+  countStart: 3
+  countMax: 6
+  interval: 3
+  v3SpawnPoint:
+  - {x: -0.5, y: 0.6, z: 0}
+  - {x: -0.2, y: -0.1, z: 0}
+  - {x: 0, y: 0.6, z: 0}
+  - {x: 0.2, y: -0.1, z: 0}
+  - {x: 0.5, y: 0.6, z: 0}
+  goWeapon: {fileID: 0}
+  v3Direction: {x: 0, y: 0, z: 0}
