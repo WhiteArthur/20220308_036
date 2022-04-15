@@ -10,7 +10,7 @@ namespace Tnu40725036
     {
         [SerializeField, Header("武器資料")]
         private DataWeapon dataWeapon;
-
+        private Animator Atkani;
         /// <summary>
         /// 計時器
         /// </summary>
@@ -40,6 +40,8 @@ namespace Tnu40725036
             Physics2D.IgnoreLayerCollision(3, 6);  // 玩家 與 武器 不碰撞
             Physics2D.IgnoreLayerCollision(6, 6);  // 玩武器 與 武器 不碰撞
             Physics2D.IgnoreLayerCollision(6, 7);  // 武器 與 牆壁 不碰撞
+
+            Atkani = GetComponent<Animator>();
         }
         /// <summary>
         /// 生成武器
@@ -62,7 +64,8 @@ namespace Tnu40725036
                 //Quaternion 四位元 : 紀錄角度資訊
                 //Quaternion.identity 零度角(0 , 0 , 0)
                 //暫存武器 = 生成 (物件，座標，角度)
-                GameObject temp = Instantiate(dataWeapon.goWeapon, pos, Quaternion.identity);
+                GameObject temp = Instantiate(dataWeapon.goWeapon, pos, Quaternion.Euler(0,0,135));
+                
                 //暫存武器.取得元件<剛體>().添加堆力 (方向 * 速度)
                 temp.GetComponent<Rigidbody2D>().AddForce(dataWeapon.v3Direction * dataWeapon.speed);
                 timer = 0;
