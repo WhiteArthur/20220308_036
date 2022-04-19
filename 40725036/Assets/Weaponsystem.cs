@@ -10,11 +10,11 @@ namespace Tnu40725036
     {
         [SerializeField, Header("武器資料")]
         private DataWeapon dataWeapon;
-        private Animator Atkani;
+        private Animator ATKani;
         /// <summary>
         /// 計時器
         /// </summary>
-        private float timer;
+        private float timer_f;
         /// <summary>
         /// 繪製圖示事件
         /// </summary>
@@ -30,18 +30,18 @@ namespace Tnu40725036
             }
             
         }
-        private void Update()
-        {
-            SpawnWeapon();
-        }
         private void Start()
         {
             // 2D 物理.忽略圖層碰撞(圖層1,圖層2)
             Physics2D.IgnoreLayerCollision(3, 6);  // 玩家 與 武器 不碰撞
             Physics2D.IgnoreLayerCollision(6, 6);  // 玩武器 與 武器 不碰撞
             Physics2D.IgnoreLayerCollision(6, 7);  // 武器 與 牆壁 不碰撞
-
-            Atkani = GetComponent<Animator>();
+            ATKani = gameObject.GetComponent<Animator>();
+        }
+        private void Update()
+        {
+            SpawnWeapon();
+            //AttackAnimation();
         }
         /// <summary>
         /// 生成武器
@@ -54,33 +54,41 @@ namespace Tnu40725036
         /// </summary>
         private void SpawnWeapon()
         {
-            timer += Time.deltaTime;
+            timer_f += Time.deltaTime;
+            ATKani.SetBool("開關攻擊", false);
             //print("經過的時間 : " + timer);
-            if (timer >= dataWeapon.interval)
+            if (timer_f >= dataWeapon.interval)
             {
-
+                ATKani.SetBool("開關攻擊", true);
                 int random =  Random.Range(0, dataWeapon.v3SpawnPoint.Length);
                 Vector3 pos = transform.position + dataWeapon.v3SpawnPoint[random];
                 //Quaternion 四位元 : 紀錄角度資訊
                 //Quaternion.identity 零度角(0 , 0 , 0)
                 //暫存武器 = 生成 (物件，座標，角度)
                 GameObject temp = Instantiate(dataWeapon.goWeapon, pos, Quaternion.Euler(0,0,135));
-                
+                //topDown.ani.SetBool(topDown.param,);
                 //暫存武器.取得元件<剛體>().添加堆力 (方向 * 速度)
                 temp.GetComponent<Rigidbody2D>().AddForce(dataWeapon.v3Direction * dataWeapon.speed);
-                timer = 0;
-            }
-            /*
-            if (timer >= dataWeapon2.interval)
-            {
 
-                int random = Random.Range(0, dataWeapon2.v3SpawnPoint.Length);
-                Vector3 pos = transform.position + dataWeapon2.v3SpawnPoint[random];
-                GameObject temp = Instantiate(dataWeapon.goWeapon, pos, Quaternion.Euler(0, 0, 135));
-                temp.GetComponent<Rigidbody2D>().AddForce(dataWeapon2.v3Direction * dataWeapon2.speed);
-                timer = 0;
+                timer_f = 0;
+                
+
             }
-            */
         }
+        
+
+        /*
+        private void AttackAnimation()
+        {
+            if (Input.GetMouseButtonDown(0))
+                attack = true;
+            else
+                attack = false;
+            if (attack == false)
+                ATKani.SetBool("開關攻擊", false);
+            if (attack == true)
+                ATKani.SetBool("開關攻擊", true);
+        }
+        */
     }
 }

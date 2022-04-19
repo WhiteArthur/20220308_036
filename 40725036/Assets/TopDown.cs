@@ -14,6 +14,7 @@ namespace Tnu40725036
         private float speed = 10.5f;
         private string parameterRun = "開關跑步";
         private string parameterDead = "開關死亡";
+        
         private Animator ani;
         private Rigidbody2D rig;
         private float h;
