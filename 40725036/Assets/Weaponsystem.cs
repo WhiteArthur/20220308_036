@@ -11,6 +11,8 @@ namespace Tnu40725036
         [SerializeField, Header("武器資料")]
         private DataWeapon dataWeapon;
         private Animator ATKani;
+        [SerializeField, Header("武器刪除時間"), Range(0, 10)]
+        private float destoryWeaponTime = 3.5f;
         /// <summary>
         /// 計時器
         /// </summary>
@@ -22,13 +24,13 @@ namespace Tnu40725036
         {
             Gizmos.color = new Color(1, 0, 0, 0.5f);
 
-            
-            
-            for (int  i = 0; i < dataWeapon.v3SpawnPoint.Length; i++)
+
+
+            for (int i = 0; i < dataWeapon.v3SpawnPoint.Length; i++)
             {
                 Gizmos.DrawSphere(transform.position + dataWeapon.v3SpawnPoint[i], 0.1f);
             }
-            
+
         }
         private void Start()
         {
@@ -60,22 +62,24 @@ namespace Tnu40725036
             if (timer_f >= dataWeapon.interval)
             {
                 ATKani.SetBool("開關攻擊", true);
-                int random =  Random.Range(0, dataWeapon.v3SpawnPoint.Length);
+                int random = Random.Range(0, dataWeapon.v3SpawnPoint.Length);
                 Vector3 pos = transform.position + dataWeapon.v3SpawnPoint[random];
                 //Quaternion 四位元 : 紀錄角度資訊
                 //Quaternion.identity 零度角(0 , 0 , 0)
                 //暫存武器 = 生成 (物件，座標，角度)
-                GameObject temp = Instantiate(dataWeapon.goWeapon, pos, Quaternion.Euler(0,0,135));
+                GameObject temp = Instantiate(dataWeapon.goWeapon, pos, Quaternion.Euler(0, 0, -45));
                 //topDown.ani.SetBool(topDown.param,);
                 //暫存武器.取得元件<剛體>().添加堆力 (方向 * 速度)
                 temp.GetComponent<Rigidbody2D>().AddForce(dataWeapon.v3Direction * dataWeapon.speed);
 
                 timer_f = 0;
-                
+
+                Destroy(temp, destoryWeaponTime);
+
 
             }
         }
-        
+
 
         /*
         private void AttackAnimation()

@@ -27,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1237761996080009590}
-  m_LocalRotation: {x: 0, y: 0, z: 0.92387956, w: 0.38268343}
+  m_LocalRotation: {x: 0, y: 0, z: -0.38268343, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 135}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45}
 --- !u!212 &8909378537100566256
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -4731858832808148742, guid: 0a8215ad0b75ca448b7f8abc6f020f8a,
+  m_SortingOrder: 5
+  m_Sprite: {fileID: 6632950902955664853, guid: 0a8215ad0b75ca448b7f8abc6f020f8a,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -101,7 +101,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0.1
+  m_GravityScale: 0.25
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -143,13 +143,13 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.046675712, y: 0.07437012}
-      - {x: 0.01205094, y: 0.0313005}
-      - {x: -0.014886223, y: 0.030261444}
-      - {x: -0.089242704, y: -0.048465148}
-      - {x: -0.13844633, y: -0.13888283}
-      - {x: -0.04877249, y: -0.09089482}
-      - {x: 0.032312434, y: -0.018988058}
-      - {x: 0.03821729, y: 0.012560263}
-      - {x: 0.07642102, y: 0.051796246}
-      - {x: 0.07539558, y: 0.07821054}
+    - - {x: 0.119691275, y: 0.122815706}
+      - {x: 0.06266132, y: 0.10172585}
+      - {x: -0.045921586, y: -0.01747448}
+      - {x: -0.062516205, y: -0.041253485}
+      - {x: -0.07372996, y: -0.057529762}
+      - {x: -0.120317996, y: -0.10218895}
+      - {x: -0.10109908, y: -0.1210991}
+      - {x: -0.05578573, y: -0.07267059}
+      - {x: -0.012343311, y: -0.051417112}
+      - {x: 0.105631396, y: 0.06624885}
