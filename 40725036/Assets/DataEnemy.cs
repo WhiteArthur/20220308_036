@@ -19,6 +19,8 @@ namespace Tnu40725036
         public float expDropProbability = 0.8f;
         [Header("±¼¸¨¸gÅç­ÈÃþ«¬")]
         public TypeExp typeExp;
+        [Header("°±¤î¶ZÂ÷")]
+        public float stopDistance = 1.5f;
 
     }
 

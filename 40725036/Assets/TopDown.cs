@@ -63,11 +63,17 @@ namespace Tnu40725036
         {
             // 使用非靜態屬性 non-static
             //欄位名稱.靜態屬性名稱 指定 值
-            rig.velocity = new Vector2 (h , v) * speed;
 
+            rig.velocity = new Vector2(h, v) * speed;
             ani.SetBool(parameterRun, h != 0 || v != 0);
 
             transform.eulerAngles = new Vector3(0, h >= 0 ? 0 : 180, 0);
+
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                float speed = 10.5f * 2;
+            }
+            
         }
         #endregion
 

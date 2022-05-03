@@ -76,7 +76,7 @@ namespace Tnu40725036
 
                 Destroy(temp, destoryWeaponTime);
 
-
+                temp.GetComponent<Weapon>().attack = dataWeapon.attack;
             }
         }
 

@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: "\u65A7\u982D"
   m_EditorClassIdentifier: 
   speed: 500
-  attack: 10
+  attack: 15
   countStart: 1
   countMax: 10
-  interval: 3.5
+  interval: 2.5
   v3SpawnPoint:
   - {x: -0.5, y: 0.6, z: 0}
   - {x: 0, y: 0.8, z: 0}
