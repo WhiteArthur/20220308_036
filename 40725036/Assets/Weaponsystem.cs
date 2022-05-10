@@ -81,18 +81,6 @@ namespace Tnu40725036
         }
 
 
-        /*
-        private void AttackAnimation()
-        {
-            if (Input.GetMouseButtonDown(0))
-                attack = true;
-            else
-                attack = false;
-            if (attack == false)
-                ATKani.SetBool("開關攻擊", false);
-            if (attack == true)
-                ATKani.SetBool("開關攻擊", true);
-        }
-        */
+
     }
 }
