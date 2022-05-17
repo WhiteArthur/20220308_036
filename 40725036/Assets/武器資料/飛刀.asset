@@ -16,7 +16,7 @@ MonoBehaviour:
   attack: 10
   countStart: 2
   countMax: 10
-  interval: 1
+  interval: 0.35999992
   v3SpawnPoint:
   - {x: 0.5, y: 0.15, z: 0}
   - {x: 0.7, y: 0, z: 0}

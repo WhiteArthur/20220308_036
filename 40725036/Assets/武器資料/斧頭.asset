@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: "\u65A7\u982D"
   m_EditorClassIdentifier: 
   speed: 500
-  attack: 15
+  attack: 20
   countStart: 1
   countMax: 10
-  interval: 2.5
+  interval: 2
   v3SpawnPoint:
-  - {x: -0.5, y: 0.6, z: 0}
-  - {x: 0, y: 0.8, z: 0}
-  - {x: 0.5, y: 0.6, z: 0}
+  - {x: -0.05, y: 0.1, z: 0}
+  - {x: -0.15, y: 0.25, z: 0}
+  - {x: -0.25, y: 0.05, z: 0}
   goWeapon: {fileID: 3934558506228696240, guid: c41c6403e5002194b9360a5a28929283,
     type: 3}
-  v3Direction: {x: 0, y: 1, z: 0}
+  v3Direction: {x: 0.4, y: 0.6, z: 0}

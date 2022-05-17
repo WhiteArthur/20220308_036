@@ -10,6 +10,7 @@ namespace Tnu40725036
     {
         [SerializeField, Header("武器資料")]
         private DataWeapon dataWeapon;
+
         private Animator ATKani;
         [SerializeField, Header("武器刪除時間"), Range(0, 10)]
         private float destoryWeaponTime = 3.5f;
