@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Tnu40725036
 {
-    public class HurtEnemy : HurtSystem
+    public class HurtEnemy : HurtSystem 
     {
         /// <summary>
         /// 敵人受傷:彈出受傷數字
@@ -39,7 +39,7 @@ namespace Tnu40725036
 
         }
 
-        protected override void Dead()
+        public override void Dead()
         {
             base.Dead();
 

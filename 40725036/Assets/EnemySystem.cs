@@ -57,7 +57,7 @@ namespace Tnu40725036
             }
             else
             {
-                transform.position = Vector3.Lerp(posEnemy, posPlayer, 0.5f * data.speed * Time.deltaTime);
+                transform.position = Vector3.Lerp(posEnemy, posPlayer, 0.3f * data.speed * Time.deltaTime);
 
                 float y = transform.position.x > traPlayer.position.x ? 180 : 0;
                 transform.eulerAngles = new Vector3(0, y, 0);

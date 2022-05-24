@@ -17,8 +17,12 @@ namespace Tnu40725036
         private Text textLv;
         [SerializeField, Header("經驗值需求表")]
         private int[] expsNeed;
-        [SerializeField, Header("武器資料")]
-        private DataWeapon dataWeapon;
+        [SerializeField, Header("武器資料1")]
+        private DataWeapon dataWeapon_1;
+        [SerializeField, Header("武器資料2")]
+        public DataWeapon dataWeapon_2;
+
+
 
         [ContextMenu("Setting Exps Need")]
         private void SettingExpsNeed()
@@ -59,12 +63,18 @@ namespace Tnu40725036
         }
         private void LevelUp()
         {
-            dataWeapon.attack += 10;
-            dataWeapon.interval -= 0.02f;
+            dataWeapon_1.attack += 10;
+            dataWeapon_1.interval -= 0.02f;
+
+            dataWeapon_2.attack += 15;
+            dataWeapon_2.interval -= 0.05f;
         }
         private void LevelZero()
         {
-            dataWeapon.attack = 10;
+            dataWeapon_1.attack = 10;
+            dataWeapon_1.interval = 0.4f;
+            dataWeapon_2.attack = 20;
+            dataWeapon_2.interval = 3.5f;
         }
     }
     

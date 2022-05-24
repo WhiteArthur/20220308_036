@@ -69,10 +69,6 @@ namespace Tnu40725036
 
             transform.eulerAngles = new Vector3(0, h >= 0 ? 0 : 180, 0);
 
-            if (Input.GetKeyDown(KeyCode.LeftShift))
-            {
-                float speed = 10.5f * 2;
-            }
             
         }
         #endregion

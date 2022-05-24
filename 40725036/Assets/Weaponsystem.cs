@@ -55,11 +55,8 @@ namespace Tnu40725036
         /// 5.發射武器
         /// 6.賦予武器攻擊力
         /// </summary>
-        private void SpawnWeapon()
-        {
-            timer_f += Time.deltaTime;
-            ATKani.SetBool("開關攻擊", false);
-            //print("經過的時間 : " + timer);
+
+        /* 自動生成武器
             if (timer_f >= dataWeapon.interval)
             {
                 ATKani.SetBool("開關攻擊", true);
@@ -79,6 +76,32 @@ namespace Tnu40725036
 
                 temp.GetComponent<Weapon>().attack = dataWeapon.attack;
             }
+         */
+        private void SpawnWeapon()
+        {
+          
+            timer_f += Time.deltaTime;
+            ATKani.SetBool("開關攻擊", false);
+
+            if (Input.GetMouseButton(0))
+            {
+                if(timer_f >= dataWeapon.interval)
+                {
+                    ATKani.SetBool("開關攻擊", true);
+                    int random = Random.Range(0, dataWeapon.v3SpawnPoint.Length);
+                    Vector3 pos = transform.position + dataWeapon.v3SpawnPoint[random];
+                    GameObject temp = Instantiate(dataWeapon.goWeapon, pos, Quaternion.Euler(0, 0, -45));
+                    temp.GetComponent<Rigidbody2D>().AddForce(dataWeapon.v3Direction * dataWeapon.speed);
+
+                    timer_f = 0;
+
+                    Destroy(temp, destoryWeaponTime);
+
+                    temp.GetComponent<Weapon>().attack = dataWeapon.attack;
+                }
+            }
+            
+            
         }
 
 

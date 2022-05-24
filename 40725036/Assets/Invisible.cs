@@ -22,6 +22,7 @@ public class Invisible : MonoBehaviour
         {
             Player.SetActive(false);
         }
+
         if (Input.GetKeyUp(KeyCode.Space))
         {
             Player.SetActive(true);

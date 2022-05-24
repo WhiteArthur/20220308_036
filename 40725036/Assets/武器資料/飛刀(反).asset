@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6245c54bbe76e704889351556ab6fa1d, type: 3}
-  m_Name: "\u98DB\u5200"
+  m_Name: "\u98DB\u5200(\u53CD)"
   m_EditorClassIdentifier: 
   speed: 600
-  attack: 50
+  attack: 10
   countStart: 2
   countMax: 10
-  interval: 0.31999996
+  interval: 0.4
   v3SpawnPoint:
-  - {x: 0.5, y: 0.15, z: 0}
-  - {x: 0.7, y: 0, z: 0}
-  - {x: 0.5, y: -0.15, z: 0}
-  goWeapon: {fileID: 1237761996080009590, guid: 9d11d34cf3abf5745aa875f1371d3d51,
+  - {x: -0.3, y: 0, z: 0}
+  - {x: -0.15, y: -0.1, z: 0}
+  - {x: -0.15, y: 0.1, z: 0}
+  goWeapon: {fileID: 6748448010875656489, guid: 9298fba941fab6e47b564b2f95631d96,
     type: 3}
-  v3Direction: {x: 1, y: 0, z: 0}
+  v3Direction: {x: -1, y: 0, z: 0}

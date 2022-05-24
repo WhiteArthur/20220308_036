@@ -23,7 +23,7 @@ namespace Tnu40725036
             if (hp <= 0) Dead();
         }
 
-        protected virtual void Dead()
+        public virtual void Dead()
         {
             hp = 0;
             print("<color=#887700>¨¤¦â¦º¤`:" + gameObject + "</color>");
